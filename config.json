@@ -1,0 +1,9 @@
+{
+  "token": "BOT_TOKEN",
+  "clientId": "CLIENT_ID",
+  "guildId": "GUILD_ID",
+  "adminId": "ADMIN_ID",
+  "verifiedRoleId": "VERIFIED_ROLE",
+  "panelChannelId": "PANEL_CHANNEL",
+  "botName": "BOT_NAME"
+}
