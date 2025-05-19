@@ -1,2 +1,1 @@
-# Verifier-Bot
-Verification Discord bot for your server! | Node.JS
+Requires: Discord.JS, Canvas
