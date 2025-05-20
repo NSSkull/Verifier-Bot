@@ -18,7 +18,8 @@ const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.DirectMessages
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.GuildMessages // Needed for messageCreate event
   ],
   partials: [Partials.Channel]
 });
@@ -175,4 +176,15 @@ client.once('ready', async () => {
   }
 });
 
-client.login(config.token);
+client.on('messageCreate', async (message) => {
+  if (
+    message.channel.id === config.panelChannelId &&
+    message.author.id === client.user.id
+  ) {
+    try {
+      await message.delete();
+    } catch (err) {
+      console.error('❌ Failed to delete bot message:', err);
+    }
+  }
+});
